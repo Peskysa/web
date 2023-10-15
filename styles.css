@@ -1,0 +1,54 @@
+
+
+*{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-justify:y;
+}
+
+a{
+    color:rgb(238, 247, 122) ;
+
+}
+a:hover{
+    color: rgb(191, 137, 241);
+}
+
+body{
+    background-color: #333;
+    color: white;
+}
+
+header{
+    text-align:center;
+}
+
+div{
+
+    margin: 3px 60px;
+    text-justify:distribute-all-lines;
+}
+
+
+
+p{
+    /*          */
+    margin: 60px 60px;
+    width: 95%;
+    height: 100px;
+    
+
+}
+
+img{margin:18px;
+
+
+}
+
+a{
+    margin: 60px 60px;
+}
