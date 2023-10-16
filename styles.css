@@ -4,17 +4,14 @@ body {
     padding: 0;
     background-color: #333;
     color: #fff;
-    margin-left: 20px;
-    margin-right: 20px;
-
-    
-    font-size: 18px; /* Tamaño de fuente para los párrafos */
+    font-size: 18px;
 }
 
 .container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
+    padding: 0 20px; /* Agregado relleno en los lados para dispositivos móviles */
 }
 
 header {
@@ -24,12 +21,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'verdana', sans-serif;
-   
+    font-family: 'Verdana', sans-serif;
 }
 
 .logo img {
-    height: 50px; /* Ajusta la altura del logo según tus necesidades */
+    height: 50px;
 }
 
 nav ul {
@@ -71,11 +67,34 @@ nav ul li a:hover {
 }
 
 .cover {
-    text-align: center; /* Centra el contenido */
-    margin: 20px auto; /* Ajusta el margen para centrar verticalmente */
+    text-align: center;
+    margin: 20px auto;
 }
 
 .cover img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 16px; /* Reducir el tamaño de la fuente para dispositivos móviles */
+    }
+
+    .logo img {
+        height: 40px; /* Ajustar el tamaño del logo para dispositivos móviles */
+    }
+
+    nav ul li {
+        margin-right: 15px;
+    }
+
+    .separator {
+        margin-bottom: 15px;
+    }
+
+    .content {
+        padding: 15px;
+    }
 }
