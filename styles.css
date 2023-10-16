@@ -5,8 +5,10 @@ body {
     background-color: #333;
     color: #fff;
     margin-left: 20px;
-    margin-right: 20px;    
-    font-size: 20px; /* Tamaño de fuente para los párrafos */
+    margin-right: 20px;
+
+    
+    font-size: 18px; /* Tamaño de fuente para los párrafos */
 }
 
 .container {
@@ -22,7 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'verdana', sans-serif;
    
 }
 
@@ -66,7 +68,6 @@ nav ul li a:hover {
 
 .content {
     padding: 20px;
-    line-height: 1.6; /* Aumenta el espacio entre líneas en los párrafos */
 }
 
 .cover {
