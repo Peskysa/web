@@ -1,54 +1,80 @@
-
-
-*{
-    scroll-behavior: smooth;
+body {
+    font-family: 'Verdana', sans-serif;
     margin: 0;
-    padding: 0;  
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 18px;
-    font-weight: bold;
-    text-justify:y;
-}
-
-a{
-    color:rgb(238, 247, 122) ;
-
-}
-a:hover{
-    color: rgb(191, 137, 241);
-}
-
-body{
+    padding: 0;
     background-color: #333;
-    color: white;
+    color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;    
+    font-size: 20px; /* Tamaño de fuente para los párrafos */
 }
 
-header{
-    text-align:center;
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
 }
 
-div{
-
-    margin: 3px 60px;
-    text-justify:distribute-all-lines;
+header {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+   
 }
 
-
-
-p{
-    /*          */
-    margin: 60px 60px;
-    width: 95%;
-    height: 100px;
-    
-
+.logo img {
+    height: 50px; /* Ajusta la altura del logo según tus necesidades */
 }
 
-img{margin:18px;
-
-
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-a{
-    margin: 60px 60px;
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.separator {
+    height: 1px;
+    background-color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.content {
+    padding: 20px;
+    line-height: 1.6; /* Aumenta el espacio entre líneas en los párrafos */
+}
+
+.cover {
+    text-align: center; /* Centra el contenido */
+    margin: 20px auto; /* Ajusta el margen para centrar verticalmente */
+}
+
+.cover img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto de la imagen */
 }
