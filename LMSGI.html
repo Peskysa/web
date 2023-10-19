@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css">
   <title>Guia Pesky</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -53,40 +54,219 @@
   </nav>
   <hr>
   <div class="container">
-    <h1>LMSGI</h1>
-    <h2>Este es un subtitulo</h2>
+    <h1>Lenguajes de Marcas y Sistemas de Gestión de Información</h1>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, elit odio tincidunt mi, vel consectetur justo velit at purus. Nam in neque eget nunc
-      fringilla
-      bibendum. In hac habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue.
-      Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum blandit iaculis a vitae justo.</p>
+    <p>Actualmente el uso de aplicaciones web es una práctica extendida y precisamente los lenguajes de marcas
+      contribuyen a la creación, formateo y comunicación de esas aplicaciones web. En un mundo globalizado necesitamos
+      poder comunicar ordenadores de todo el planeta mediante lenguajes de marcado y sistemas de gestión de la
+      información.</p>
 
-    <p style="color: #f0e68c;">Suspendisse potenti. Sed feugiat, odio vitae egestas tincidunt, arcu nisi
-      tincidunt est, vel cursus
-      leo elit ut sapien. Integer ut justo nec conguevestibulum.</p>
+    <h2>Casos prácticos</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, odio tincidunt mi, vel consectetur justo at purus. Nam in neque eget nunc fringilla
-      bibendum. In
-      habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue. Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum iaculis a vitae justo.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, odio tincidunt mi, vel consectetur justo velit at purus. Nam in neque eget nunc
-      fringilla
-      bibendum. In h habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue.
-      Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum blandit iaculis a vitae justo.</p>
+    <p style="color: #f0e68c;">1.- Diseñar un documento XML bien formado que permita estructurar los libros de nuestra
+      bibilioteca privada. Cada libro tiene un código que nos inventaremos, título, autor o autores (nombre y apellidos
+      por separado), Editorial, ISBN y año de publicación. Rellenar la ficha de al menos tres libros, uno de ellos
+      tendrá como mínimo dos autores</p>
 
-  </div>
+    <!-- de linea a linea para insertar codigo en la web
+    ----------------------------------------------------------------------------------------------------------- -->
+
+    <!-- para otros lenguajes, como CSS, JavaScript, Python, etc., 
+    utilizando las clases de lenguaje adecuadas (language-css, language-javascript, language-python, etc.). -->
+    <pre>
+        <code id="codigo" class="language-html">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;biblioteca&gt;
+  &lt;libro&gt;
+      &lt;codigo&gt;001&lt;/codigo&gt;
+      &lt;titulo&gt;El Señor de los Anillos&lt;/titulo&gt;
+      &lt;autores&gt;
+          &lt;autor&gt;
+              &lt;nombre&gt;J.R.R.&lt;/nombre&gt;
+              &lt;apellido&gt;Tolkien&lt;/apellido&gt;
+          &lt;/autor&gt;
+      &lt;/autores&gt;
+      &lt;editorial&gt;Editorial Verde&lt;/editorial&gt;
+      &lt;isbn&gt;91 780 04 88&lt;/isbn&gt;
+      &lt;publicacion&gt;1954&lt;/publicacion&gt;
+  &lt;/libro&gt;
+  &lt;libro&gt;
+      &lt;codigo&gt;002&lt;/codigo&gt;
+      &lt;titulo&gt;Cien años de soledad&lt;/titulo&gt;
+      &lt;autores&gt;
+          &lt;autor&gt;
+              &lt;nombre&gt;Gabriel&lt;/nombre&gt;
+              &lt;apellido&gt;García Márquez&lt;/apellido&gt;
+          &lt;/autor&gt;
+      &lt;/autores&gt;
+      &lt;editorial&gt;Editorial Azul&lt;/editorial&gt;
+      &lt;isbn&gt;91 780 04 11&lt;/isbn&gt;
+      &lt;publicacion&gt;1967&lt;/publicacion&gt;
+  &lt;/libro&gt;
+  &lt;libro&gt;
+      &lt;codigo&gt;003&lt;/codigo&gt;
+      &lt;titulo&gt;Harry Potter y la piedra filosofal&lt;/titulo&gt;
+      &lt;autores&gt;
+          &lt;autor&gt;
+              &lt;nombre&gt;J.K.&lt;/nombre&gt;
+              &lt;apellido&gt;Rowling&lt;/apellido&gt;
+          &lt;/autor&gt;
+          &lt;autor&gt;
+              &lt;nombre&gt;John&lt;/nombre&gt;
+              &lt;apellido&gt;Smith&lt;/apellido&gt;
+          &lt;/autor&gt;
+      &lt;/autores&gt;
+      &lt;editorial&gt;Editorial Roja&lt;/editorial&gt;
+      &lt;isbn&gt;91 780 04 33&lt;/isbn&gt;
+      &lt;publicacion&gt;1997&lt;/publicacion&gt;
+  &lt;/libro&gt;
+&lt;/biblioteca&gt;
+                    
+        </code>
+    </pre>
+
+    <!-- Botón de copiar al portapapeles -->
+    <button id="copiarBoton">Copiar Código</button>
+
+    <!-- Incluye Prism.js para resaltar la sintaxis -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-html.min.js"></script>
+
+    <!-- Incluye Clipboard.js para copiar al portapapeles -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+    <script>
+      // Inicializa el objeto Clipboard.js
+      var clipboard = new ClipboardJS('#copiarBoton', {
+        target: function (trigger) {
+          return document.getElementById('codigo');
+        }
+      });
+
+      // Muestra una alerta cuando se copia el código
+      clipboard.on('success', function (e) {
+        alert('¡Código copiado al portapapeles!');
+        e.clearSelection();
+      });
+
+      // Maneja errores de copia al portapapeles
+      clipboard.on('error', function (e) {
+        alert('Error al intentar copiar el código. Por favor, selecciónalo y cópialo manualmente.');
+      });
+    </script>
+    <!-- de linea a linea para insertar codigo en la web
+    ----------------------------------------------------------------------------------------------------------- -->
+    <p>Hay tres libros en la biblioteca. El primer libro tiene un solo autor, el segundo libro también tiene un solo
+      autor, y el tercer libro tiene dos autores. Cada libro está representado por el elemento "libro" que contiene
+      elementos hijos como "codigo", "titulo", "autores", "editorial", "isbn", y "publicacion" para almacenar la
+      información correspondiente a cada libro. (los datos son inventados).</p>
+    <hr>
+
+    <p style="color: #f0e68c;">2.- Diseñar un documento XML bien formado que permita estructurar la información de los
+      alumnos matriculados en el ciclo para permitir su gestión informática. Cada alumno tiene un código que nos
+      inventaremos, nombre y apellidos por separado, NIF, teléfono, email y los módulos en los que está matriculado. Por
+      el momento hay tres alumnos inscritos:</p>
+
+    <p style="color: #f0e68c;">- Luisa Santos García con nif 12345678H, teléfono 666123456, email lsgarcia@gmail.com.
+      Está matriculada en IAW, FOL y ASO .</p>
+
+    <p style="color: #f0e68c;">
+      - María Fernández Gutiérrez con nif 16965696L, teléfono 789654321, email maria.fdezgtrrez@hotmail.com. No hay
+      información sobre los módulos en los que está matriculada.</p>
+    <p style="color: #f0e68c;">
+      - José Grillo Ramos con nif 98765432H, teléfono 656566555, email jgrillor@gmail.com. Está matriculado en GBD, FOL,
+      LMSGI, ISOP y ASO</p>
+
+    <!-- de linea a linea para insertar codigo en la web
+    ----------------------------------------------------------------------------------------------------------- -->
+
+    <!-- para otros lenguajes, como CSS, JavaScript, Python, etc., 
+    utilizando las clases de lenguaje adecuadas (language-css, language-javascript, language-python, etc.). -->
+    <pre>
+      <code id="codigo" class="language-html">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;alumnos&gt;
+    &lt;alumno&gt;
+        &lt;codigo&gt;001&lt;/codigo&gt;
+        &lt;nombre&gt;Luisa&lt;/nombre&gt;
+        &lt;apellido&gt;Santos García&lt;/apellido&gt;
+        &lt;nif&gt;12345678H&lt;/nif&gt;
+        &lt;telefono&gt;666123456&lt;/telefono&gt;
+        &lt;email&gt;lsgarcia@gmail.com&lt;/email&gt;
+        &lt;modulos&gt;
+            &lt;modulo&gt;IAW&lt;/modulo&gt;
+            &lt;modulo&gt;FOL&lt;/modulo&gt;
+            &lt;modulo&gt;ASO&lt;/modulo&gt;
+        &lt;/modulos&gt;
+    &lt;/alumno&gt;
+    &lt;alumno&gt;
+        &lt;codigo&gt;002&lt;/codigo&gt;
+        &lt;nombre&gt;María&lt;/nombre&gt;
+        &lt;apellido&gt;Fernández Gutiérrez&lt;/apellido&gt;
+        &lt;nif&gt;16965696L&lt;/nif&gt;
+        &lt;telefono&gt;789654321&lt;/telefono&gt;
+        &lt;email&gt;maria.fdezgtrrez@hotmail.com&lt;/email&gt;
+        &lt;modulos /&gt;
+    &lt;/alumno&gt;
+    &lt;alumno&gt;
+        &lt;codigo&gt;003&lt;/codigo&gt;
+        &lt;nombre&gt;José&lt;/nombre&gt;
+        &lt;apellido&gt;Grillo Ramos&lt;/apellido&gt;
+        &lt;nif&gt;98765432H&lt;/nif&gt;
+        &lt;telefono&gt;656566555&lt;/telefono&gt;
+        &lt;email&gt;jgrillor@gmail.com&lt;/email&gt;
+        &lt;modulos&gt;
+            &lt;modulo&gt;GBD&lt;/modulo&gt;
+            &lt;modulo&gt;FOL&lt;/modulo&gt;
+            &lt;modulo&gt;LMSGI&lt;/modulo&gt;
+            &lt;modulo&gt;ISOP&lt;/modulo&gt;
+            &lt;modulo&gt;ASO&lt;/modulo&gt;
+        &lt;/modulos&gt;
+    &lt;/alumno&gt;
+&lt;/alumnos&gt;
+      </code>
+  </pre>
+
+    <!-- Botón de copiar al portapapeles -->
+    <button id="copiarBoton">Copiar Código</button>
+
+    <!-- Incluye Prism.js para resaltar la sintaxis -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-html.min.js"></script>
+
+    <!-- Incluye Clipboard.js para copiar al portapapeles -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+    <script>
+      // Inicializa el objeto Clipboard.js
+      var clipboard = new ClipboardJS('#copiarBoton', {
+        target: function (trigger) {
+          return document.getElementById('codigo');
+        }
+      });
+
+      // Muestra una alerta cuando se copia el código
+      clipboard.on('success', function (e) {
+        alert('¡Código copiado al portapapeles!');
+        e.clearSelection();
+      });
+
+      // Maneja errores de copia al portapapeles
+      clipboard.on('error', function (e) {
+        alert('Error al intentar copiar el código. Por favor, selecciónalo y cópialo manualmente.');
+      });
+    </script>
+    <!-- de linea a linea para insertar codigo en la web
+  ----------------------------------------------------------------------------------------------------------- -->
+    <p>Cada alumno está representado por el elemento "alumno". Cada alumno tiene un "codigo" inventado, elementos para
+      el "nombre" y "apellido", así como "nif", "telefono","email", y una lista de módulos en los que está
+      matriculado representados por el elemento "modulo". En el caso de María Fernández Gutiérrez, no hay
+      información sobre los módulos en los que está matriculada, por lo que la lista de módulos está
+      vacía.</p>
+
+
+
+
 </body>
 
 </html>

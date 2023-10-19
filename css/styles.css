@@ -184,6 +184,12 @@ p {
     font-size: 1.1em;
   }
 
+  pre {
+    max-width: 100%;
+    /* Asegura que la imagen no exceda el ancho del contenedor */
+   
+  }
+
 
 
 
