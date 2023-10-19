@@ -55,14 +55,11 @@
   <hr>
   <div class="container">
     <h1>Lenguajes de Marcas y Sistemas de Gestión de Información</h1>
-
     <p>Actualmente el uso de aplicaciones web es una práctica extendida y precisamente los lenguajes de marcas
       contribuyen a la creación, formateo y comunicación de esas aplicaciones web. En un mundo globalizado necesitamos
       poder comunicar ordenadores de todo el planeta mediante lenguajes de marcado y sistemas de gestión de la
       información.</p>
-
     <h2>Casos prácticos</h2>
-
     <p style="color: #f0e68c;">1.- Diseñar un documento XML bien formado que permita estructurar los libros de nuestra
       bibilioteca privada. Cada libro tiene un código que nos inventaremos, título, autor o autores (nombre y apellidos
       por separado), Editorial, ISBN y año de publicación. Rellenar la ficha de al menos tres libros, uno de ellos
@@ -120,8 +117,7 @@
       &lt;isbn&gt;91 780 04 33&lt;/isbn&gt;
       &lt;publicacion&gt;1997&lt;/publicacion&gt;
   &lt;/libro&gt;
-&lt;/biblioteca&gt;
-                    
+&lt;/biblioteca&gt;                    
         </code>
     </pre>
 
@@ -161,15 +157,12 @@
       elementos hijos como "codigo", "titulo", "autores", "editorial", "isbn", y "publicacion" para almacenar la
       información correspondiente a cada libro. (los datos son inventados).</p>
     <hr>
-
     <p style="color: #f0e68c;">2.- Diseñar un documento XML bien formado que permita estructurar la información de los
       alumnos matriculados en el ciclo para permitir su gestión informática. Cada alumno tiene un código que nos
       inventaremos, nombre y apellidos por separado, NIF, teléfono, email y los módulos en los que está matriculado. Por
       el momento hay tres alumnos inscritos:</p>
-
     <p style="color: #f0e68c;">- Luisa Santos García con nif 12345678H, teléfono 666123456, email lsgarcia@gmail.com.
       Está matriculada en IAW, FOL y ASO .</p>
-
     <p style="color: #f0e68c;">
       - María Fernández Gutiérrez con nif 16965696L, teléfono 789654321, email maria.fdezgtrrez@hotmail.com. No hay
       información sobre los módulos en los que está matriculada.</p>
@@ -263,6 +256,124 @@
       matriculado representados por el elemento "modulo". En el caso de María Fernández Gutiérrez, no hay
       información sobre los módulos en los que está matriculada, por lo que la lista de módulos está
       vacía.</p>
+    <hr>
+    <p style="color: #f0e68c;">3.- Diseñar un documento bien formado en XML que permita estructurar la información de
+      las recetas de cocina que me enseñó mi abuela. Hay que hacerlo de modo que un sistema informático pueda realizar
+      búsquedas por ingredientes, cantidad de comensales o nombre de la receta. Aplicarlo a la siguiente receta de
+      cocina:</p>
+    <p style="color: #f0e68c;">
+      Salmorejo (6 personas)
+    </p>
+    <p style="color: #f0e68c;">
+      Ingredientes:
+      150 ml de aceite de oliva virgen extra.
+      1 Kg de tomates rojos.
+      200 g de pan de trigo blanco.
+      1 diente de ajo.
+      10 g de sal.
+    </p>
+    <p style="color: #f0e68c;">
+      Pasos:
+    </p>
+    <ol style="color: #f0e68c;">
+      <li>Limpiar bien los tomates, cortarlos en cuartos y los trituramos con la batidora hasta que nos quede una salsa
+        líquida.</li>
+      <li>Pasar esta salsa por un colador para retirar posibles trozos de piel y pequeñas pepitas que hayan quedado al
+        batirlos.</li>
+      <li>Cortar el pan en trozos pequeños y añadirlos a la crema de tomate anterior. Los dejamos reposar durante unos
+        10 minutos.</li>
+      <li>Pelamos el ajo y, como lo vamos a usar en crudo, le quitamos el centro para que no repita. Lo añadimos al
+        tomate con el pan. Echamos el aceite de oliva virgen extra y la sal. Lo pasamos todo por la batidora hasta que
+        nos quede lo más fino posible. Probamos si esta bien de sal y si no, rectificamos con un poco más.</li>
+      <li>Meter el bol en la nevera y dejar que se enfríe un par de horas.</li>
+      <li>Para servirlo, ponerlo en un plato hondo o cuenco. Se puede añadir unas virutas de jamón serrano.</li>
+    </ol>
+    <!-- de linea a linea para insertar codigo en la web
+    ----------------------------------------------------------------------------------------------------------- -->
+
+    <!-- para otros lenguajes, como CSS, JavaScript, Python, etc., 
+    utilizando las clases de lenguaje adecuadas (language-css, language-javascript, language-python, etc.). -->
+    <pre>
+      <code id="codigo" class="language-html">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;recetas&gt;
+    &lt;receta&gt;
+        &lt;nombre&gt;Salmorejo&lt;/nombre&gt;
+        &lt;comensales&gt;6&lt;/comensales&gt;
+        &lt;ingredientes&gt;
+            &lt;ingrediente&gt;
+                &lt;nombre&gt;aceite de oliva virgen extra&lt;/nombre&gt;
+                &lt;cantidad&gt;150 ml&lt;/cantidad&gt;
+            &lt;/ingrediente&gt;
+            &lt;ingrediente&gt;
+                &lt;nombre&gt;tomates rojos&lt;/nombre&gt;
+                &lt;cantidad&gt;1 Kg&lt;/cantidad&gt;
+            &lt;/ingrediente&gt;
+            &lt;ingrediente&gt;
+                &lt;nombre&gt;pan de trigo blanco&lt;/nombre&gt;
+                &lt;cantidad&gt;200 g&lt;/cantidad&gt;
+            &lt;/ingrediente&gt;
+            &lt;ingrediente&gt;
+                &lt;nombre&gt;ajo&lt;/nombre&gt;
+                &lt;cantidad&gt;1 diente&lt;/cantidad&gt;
+            &lt;/ingrediente&gt;
+            &lt;ingrediente&gt;
+                &lt;nombre&gt;sal&lt;/nombre&gt;
+                &lt;cantidad&gt;10 g &lt;/cantidad&gt;
+            &lt;/ingrediente&gt;
+        &lt;/ingredientes&gt;
+        &lt;pasos&gt;
+            &lt;paso numero="1"&gt;Limpiar bien los tomates, cortarlos en cuartos y triturarlos con la batidora hasta obtener una salsa líquida.&lt;/paso&gt;
+            &lt;paso numero="2"&gt;Pasar la salsa por un colador para retirar posibles trozos de piel y pepitas.&lt;/paso&gt;
+            &lt;paso numero="3"&gt;Cortar el pan en trozos pequeños y añadirlos a la crema de tomate. Dejar reposar durante 10 minutos.&lt;/paso&gt;
+            &lt;paso numero="4"&gt;Pelar el ajo y quitar el centro para evitar el sabor fuerte. Añadir el ajo al tomate con el pan, el aceite de oliva y la sal. Batir hasta obtener una mezcla fina.&lt;/paso&gt;
+            &lt;paso numero="5"&gt;Meter el bol en la nevera y dejar enfriar durante un par de horas.&lt;/paso&gt;
+            &lt;paso numero="6"&gt;Para servir, poner el salmorejo en un plato hondo o cuenco. Opcionalmente, añadir unas virutas de jamón serrano.&lt;/paso&gt;
+        &lt;/pasos&gt;
+    &lt;/receta&gt;
+&lt;/recetas&gt;
+
+      </code>
+  </pre>
+
+    <!-- Botón de copiar al portapapeles -->
+    <button id="copiarBoton">Copiar Código</button>
+
+    <!-- Incluye Prism.js para resaltar la sintaxis -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-html.min.js"></script>
+
+    <!-- Incluye Clipboard.js para copiar al portapapeles -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+    <script>
+      // Inicializa el objeto Clipboard.js
+      var clipboard = new ClipboardJS('#copiarBoton', {
+        target: function (trigger) {
+          return document.getElementById('codigo');
+        }
+      });
+
+      // Muestra una alerta cuando se copia el código
+      clipboard.on('success', function (e) {
+        alert('¡Código copiado al portapapeles!');
+        e.clearSelection();
+      });
+
+      // Maneja errores de copia al portapapeles
+      clipboard.on('error', function (e) {
+        alert('Error al intentar copiar el código. Por favor, selecciónalo y cópialo manualmente.');
+      });
+    </script>
+    <!-- de linea a linea para insertar codigo en la web
+  ----------------------------------------------------------------------------------------------------------- -->
+    <p>La información de la receta se estructura en el elemento "receta", con subelementos para el "nombre",
+      "comensales", "ingredientes" y "pasos". Los ingredientes están detallados con sus cantidades y nombres
+      respectivos, y los pasos de la receta están enumerados como elementos "paso". Esto permite que un
+      sistema informático pueda realizar búsquedas por ingredientes, cantidad de comensales o nombre de la
+      receta de manera efectiva. También los pasos de la receta están numerados utilizando el atributo
+      numero en los elementos "paso". Esto facilita la identificación numérica de cada paso para su
+      posterior procesamiento informático.</p>
 
 
 
