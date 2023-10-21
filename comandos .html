@@ -3,9 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="./images/logo.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css">
-  <title>Guia Pesky</title>
+  <title>Guía Pesky</title>
+  <!-- Incluye highlight.js y el tema -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+  <!-- Incluye el lenguaje de Shell Scripting (Bash) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/shell.min.js"></script>
 </head>
 
 <body>
@@ -53,42 +59,201 @@
   </nav>
   <hr>
   <div class="container">
-    <h1>Comandos</h1>
-    <h2>Este es un subtitulo</h2>
+    <h1>Comandos en sistemas Linux</h1>
+    <h2>Guía básica para escribir un script en Bash</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, elit odio tincidunt mi, vel consectetur justo velit at purus. Nam in neque eget nunc
-      fringilla
-      bibendum. In hac habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue.
-      Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum blandit iaculis a vitae justo.</p>
+    <p>
+      Paso 1: Crear un Archivo para el Script Bash con un editor de texto en tu sistema (como nano, vim o gedit en
+      sistemas Unix/Linux) y guarda el archivo con una extensión .sh para indicar que es un script Bash. Por ejemplo,
+      puedes llamarlo mi_script.sh. Paso 2: Escribe tu código Bash en el archivo .sh. Aquí tienes un ejemplo simple de
+      un script Bash que saluda al usuario.</p>
 
-    <p style="color: #f0e68c;">Suspendisse potenti. Sed feugiat, odio vitae egestas tincidunt, arcu nisi
-      tincidunt est, vel cursus
-      leo elit ut sapien. Integer ut justo nec conguevestibulum.</p>
+    <!-- Contenedor para el código Bash-------------------------------------------------------------- -->
+    <div>
+      <pre><code class="bash">
+        #!/bin/bash
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, odio tincidunt mi, vel consectetur justo at purus. Nam in neque eget nunc fringilla
-      bibendum. In
-      habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue. Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum iaculis a vitae justo.</p>
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, odio tincidunt mi, vel consectetur justo velit at purus. Nam in neque eget nunc
-      fringilla
-      bibendum. In h habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue.
-      Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum blandit iaculis a vitae justo.</p>
+        # Este es un comentario
+        echo "Hola, Mundo!"
+              </code></pre>
+    </div>
+    <!-- Botón para copiar el código -->
+    <button id="copyButton">Copiar Código</button>
+    <!-- Script para copiar el código al portapapeles -->
+    <script>
+      hljs.highlightAll(); // Inicializa highlight.js      
+      // Función para copiar el código al portapapeles
+      document.getElementById("copyButton").addEventListener("click", function () {
+        // Selecciona el código dentro del elemento <code>
+        var codeElement = document.querySelector("code.bash");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        // Copia el código al portapapeles
+        try {
+          document.execCommand("copy");
+          alert("Código copiado al portapapeles: \n" + codeElement.innerText);
+        } catch (err) {
+          console.error("Error al intentar copiar: ", err);
+        }
+        // Limpia la selección del texto
+        window.getSelection().removeAllRanges();
+      });
+    </script>
 
-  </div>
+    <ul style="color: #f0e68c;">
+      <li>#!/bin/bash: Esta línea, llamada shebang, indica que el archivo debe ser interpretado y ejecutado por el
+        intérprete de Bash (/bin/bash en este caso).</li>
+      <li># Este es un comentario: Los comentarios en Bash comienzan con # y son ignorados por el intérprete. Los
+        comentarios son útiles para explicar el código y hacerlo más comprensible.</li>
+      <li>echo "Hola, Mundo!": Esta línea imprime "Hola, Mundo!" en la consola.</li>
+    </ul>
+    <P>Antes de ejecutar el script, necesitas darle permisos de ejecución. Puedes hacerlo con el siguiente comando en la
+      terminal. Esto otorga permisos de ejecución al archivo mi_script.sh.</P>
+    <!-- Contenedor para el código Bash-------------------------------------------------------------- -->
+    <div>
+      <pre><code class="bash">
+        chmod +x mi_script.sh
+              </code></pre>
+    </div>
+    <!-- Botón para copiar el código -->
+    <button id="copyButton">Copiar Código</button>
+    <!-- Script para copiar el código al portapapeles -->
+    <script>
+      hljs.highlightAll(); // Inicializa highlight.js      
+      // Función para copiar el código al portapapeles
+      document.getElementById("copyButton").addEventListener("click", function () {
+        // Selecciona el código dentro del elemento <code>
+        var codeElement = document.querySelector("code.bash");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        // Copia el código al portapapeles
+        try {
+          document.execCommand("copy");
+          alert("Código copiado al portapapeles: \n" + codeElement.innerText);
+        } catch (err) {
+          console.error("Error al intentar copiar: ", err);
+        }
+        // Limpia la selección del texto
+        window.getSelection().removeAllRanges();
+      });
+    </script>
+    <P>Ahora que el script tiene permisos de ejecución, puedes ejecutarlo usando el siguiente comando en la terminal.
+      Esto ejecutará el script y deberías ver la salida "Hola, Mundo!" en la terminal.</P>
+    <!-- Contenedor para el código Bash-------------------------------------------------------------- -->
+    <div>
+      <pre><code class="bash">
+        ./mi_script.sh
+              </code></pre>
+    </div>
+    <!-- Botón para copiar el código -->
+    <button id="copyButton">Copiar Código</button>
+    <!-- Script para copiar el código al portapapeles -->
+    <script>
+      hljs.highlightAll(); // Inicializa highlight.js      
+      // Función para copiar el código al portapapeles
+      document.getElementById("copyButton").addEventListener("click", function () {
+        // Selecciona el código dentro del elemento <code>
+        var codeElement = document.querySelector("code.bash");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        // Copia el código al portapapeles
+        try {
+          document.execCommand("copy");
+          alert("Código copiado al portapapeles: \n" + codeElement.innerText);
+        } catch (err) {
+          console.error("Error al intentar copiar: ", err);
+        }
+        // Limpia la selección del texto
+        window.getSelection().removeAllRanges();
+      });
+    </script>
+    <p></p>
+    <hr>
+    <h2>Guía básica para usar comandos en Ubuntu y otras distribuciones basadas en Debian</h2>
+    <p>Los sistemas basados en Unix/Linux como Linux y macOS utilizan una interfaz de línea de comandos (CLI) para
+      interactuar con el sistema operativo. La mayoría de los comandos se ingresan en una terminal. A continuación, te
+      mostraré cómo usar algunos comandos esenciales:</p>
+    <p>Para cambiar el nombre del equipo (hostname) en Linux, sigue estos pasos. Edita el archivo /etc/hosts para
+      reflejar el cambio. Abre el archivo usando un editor de texto y cambia el nombre anterior.</p>
+    <!-- Contenedor para el código Bash-------------------------------------------------------------- -->
+    <div>
+      <pre><code class="bash">
+        sudo nano /etc/hosts
+              </code></pre>
+    </div>
+    <!-- Botón para copiar el código -->
+    <button id="copyButton">Copiar Código</button>
+    <!-- Script para copiar el código al portapapeles -->
+    <script>
+      hljs.highlightAll(); // Inicializa highlight.js      
+      // Función para copiar el código al portapapeles
+      document.getElementById("copyButton").addEventListener("click", function () {
+        // Selecciona el código dentro del elemento <code>
+        var codeElement = document.querySelector("code.bash");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        // Copia el código al portapapeles
+        try {
+          document.execCommand("copy");
+          alert("Código copiado al portapapeles: \n" + codeElement.innerText);
+        } catch (err) {
+          console.error("Error al intentar copiar: ", err);
+        }
+        // Limpia la selección del texto
+        window.getSelection().removeAllRanges();
+      });
+    </script>
+    <P>Ahora ejecuta el siguiente comando, tienes que poner el mismo nuevo nombre en los dos sitios y ya estaría
+      cambiado. Si cambiamos de consola con CONTROL+ALT y alguna de las siguientes: F1 F2 F3 F4 F5 F6 podemos comprobar
+      que se ha cambiado el nombre del equipo sin reiniciar. Esto es importante porque en muchos server es necesario
+      prestar servicio 24-7 todo el año. </P>
+    <!-- Contenedor para el código Bash-------------------------------------------------------------- -->
+    <div>
+      <pre><code class="bash">
+        hostnamectl set-hostname NOMBRE_NUEVO
+              </code></pre>
+    </div>
+    <!-- Botón para copiar el código -->
+    <button id="copyButton">Copiar Código</button>
+    <!-- Script para copiar el código al portapapeles -->
+    <script>
+      hljs.highlightAll(); // Inicializa highlight.js      
+      // Función para copiar el código al portapapeles
+      document.getElementById("copyButton").addEventListener("click", function () {
+        // Selecciona el código dentro del elemento <code>
+        var codeElement = document.querySelector("code.bash");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        // Copia el código al portapapeles
+        try {
+          document.execCommand("copy");
+          alert("Código copiado al portapapeles: \n" + codeElement.innerText);
+        } catch (err) {
+          console.error("Error al intentar copiar: ", err);
+        }
+        // Limpia la selección del texto
+        window.getSelection().removeAllRanges();
+      });
+    </script>
+
+
+
+
+
+
+
+
+
 </body>
-
-</html>
 
 </html>

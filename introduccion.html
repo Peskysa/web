@@ -2,10 +2,16 @@
 <html lang="es">
 
 <head>
+  <link rel="icon" href="./images/logo.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css">
   <title>Guia Pesky</title>
+  <!-- Incluye highlight.js y el tema -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+  <!-- Incluye el lenguaje de Shell Scripting (Bash) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/shell.min.js"></script>
 </head>
 
 <body>
@@ -53,7 +59,7 @@
   </nav>
   <hr>
   <div class="container">
-    <h1>Introducción</h1>
+    <h1>Comandos</h1>
     <h2>Este es un subtitulo</h2>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
@@ -65,30 +71,38 @@
       sed justo ut
       ipsum blandit iaculis a vitae justo.</p>
 
-    <p style="color: #f0e68c;">Suspendisse potenti. Sed feugiat, odio vitae egestas tincidunt, arcu nisi
-      tincidunt est, vel cursus
-      leo elit ut sapien. Integer ut justo nec conguevestibulum.</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, odio tincidunt mi, vel consectetur justo at purus. Nam in neque eget nunc fringilla
-      bibendum. In
-      habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue. Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum iaculis a vitae justo.</p>
-    <div class="cover">
-      <img src="./images/asir.png" alt="Logo">
+    <!-- Contenedor para el código Bash-------------------------------------------------------------- -->
+    <div>
+      <pre><code class="bash">
+      #!/bin/bash
+      echo "Hola, Mundo!"
+              </code></pre>
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, ligula eget gravida
-      consequat, odio tincidunt mi, vel consectetur justo velit at purus. Nam in neque eget nunc
-      fringilla
-      bibendum. In h habitasse platea dictumst. Praesent at ligula nec elit llamcorper congue.
-      Curabitur vulputate,
-      elit eget tristique elementum, odio dui fermentum dui, eu imperdiet lectus id libero. Vivamus
-      sed justo ut
-      ipsum blandit iaculis a vitae justo.</p>
+    <!-- Botón para copiar el código -->
+    <button id="copyButton">Copiar Código</button>
+    <!-- Script para copiar el código al portapapeles -->
+    <script>
+      hljs.highlightAll(); // Inicializa highlight.js      
+      // Función para copiar el código al portapapeles
+      document.getElementById("copyButton").addEventListener("click", function () {
+        // Selecciona el código dentro del elemento <code>
+        var codeElement = document.querySelector("code.bash");
+        var range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        // Copia el código al portapapeles
+        try {
+          document.execCommand("copy");
+          alert("Código copiado al portapapeles: \n" + codeElement.innerText);
+        } catch (err) {
+          console.error("Error al intentar copiar: ", err);
+        }
+        // Limpia la selección del texto
+        window.getSelection().removeAllRanges();
+      });
+    </script>
 
-  </div>
 </body>
 
 </html>
